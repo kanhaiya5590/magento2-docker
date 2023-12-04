@@ -32,7 +32,7 @@ Magento 2.4.6-p3 Docker Setup:
 
 2. Clone magento2-docker repository and Build the docker Images:
 
-        * Goto "magento2-docker" folder and and create "magento246" folder(mkdir magento246)
+        * Goto "magento2-docker" folder and create "magento246" folder(mkdir magento246)
         * docker-compose build
         * docker-compose up -d
 
