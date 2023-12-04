@@ -1,6 +1,7 @@
-# Magento 2.4.x Docker + Xdebug(Phpstorm) + MailHog + Multiple Website + Blackfire + Redis/Redisinsight + Elasticsearch + Rabbitmq
+# Magento 2.4.5 and 2.4.6 Docker + Blackfire + Redis/Redisinsight + Elasticsearch + Rabbitmq
 
 Magento 2.4.6 Docker Environment
+
 
 Services  : Nginx 1.22, PHP 8.2-fpm-buster, Mariadb 10.6
 
@@ -22,9 +23,9 @@ Tree
 └── magento246
 ```
 
-Magento 2.4.6-p2 Docker Setup:
+Magento 2.4.6-p3 Docker Setup:
 
-1. Download and install docker app (windows/Mac)
+1. Download and install docker app (windows/[Mac](https://docs.docker.com/desktop/install/mac-install/))
 
     * Docker > Preferences > Resources > Advanced : at least 4 or 5 CPUs and 16.0 GB RAM
     * Local machine have alteast 32GB RAM(Recommended)    
@@ -35,9 +36,13 @@ Magento 2.4.6-p2 Docker Setup:
         * docker-compose build
         * docker-compose up -d
 
-3. Add System variable in environmental settings ```SHELL=/bin/bash``` (windows)
+   Note:  In Mac - Open Terminal
+      * ```mkdir ~/Sites``` Create root folder if not there
+      * Or ```mkdir -p ~/Sites/magento2-docker``` Create docker content folder
+    
+4. Add System variable in environmental settings ```SHELL=/bin/bash``` (windows)
 
-4. To show Running Containers use command ```docker ps```
+5. To show Running Containers use command ```docker ps```
 
 ```
 λ docker ps
