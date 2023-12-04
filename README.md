@@ -129,7 +129,7 @@ Magento 2.4.6-p3 Docker Setup:
 
 6. Configure your hosts file: 127.0.0.1 magento246.loc 
    1. In windows:-  c:\Windows\System32\Drivers\etc\hosts.
-   2. Mac/Ubuntu:-  /etc/hosts
+   2. Mac/Ubuntu:-  /etc/hosts (Mac Root Folder not Container)
 
 7. Open http://magento246.loc/ 
 
