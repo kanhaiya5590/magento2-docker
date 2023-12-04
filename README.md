@@ -60,70 +60,70 @@ Magento 2.4.6-p3 Docker Setup:
 5. Install magento Instance:
 
 ```
-           Connect to php container: 
-           
-           * docker exec -it php bash
-           
-           * cd /var/www/magento246
-           
-           * If its an existent project, clone project repository to the 'magento246', then update env.php and go to #8
-           
-           * Install Magento Instance in magento246 ( https://devdocs.magento.com/guides/v2.4/install-gde/composer.html )
+  Connect to php container: 
+  
+  * docker exec -it php bash
+  
+  * cd /var/www/magento246
+  
+  * If its an existent project, clone project repository to the 'magento246', then update env.php and go to #8
+  
+  * Install Magento Instance in magento246 ( https://devdocs.magento.com/guides/v2.4/install-gde/composer.html )
+ 
+       1. composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition=2.4.6-p2 .
+          * enter your Magento authentication keys
           
-          	    1. composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition=2.4.6-p2 .
-          		    * enter your Magento authentication keys
-          		    
-          		2. Install M2 via CLI(/var/www/magento246):
-                       
-                        bin/magento setup:install \
-                        --base-url=http://magento246.loc/ \
-                        --db-host=mariadb_246 \
-                        --db-name=magento246 \
-                        --db-user=mage246_user \
-                        --db-password=mage246_pass \
-                        --admin-firstname=admin \
-                        --admin-lastname=admin \
-                        --admin-email=admin@admin.com \
-                        --admin-user=admin \
-                        --admin-password=admin123 \
-                        --language=en_US \
-                        --currency=USD \
-                        --timezone=America/Chicago \
-                        --use-rewrites=1 \
-                        --search-engine=elasticsearch7 \
-                        --elasticsearch-host=elasticsearch \
-                        --elasticsearch-index-prefix=magento246 \
-                        --elasticsearch-port=9200         
-                           
-                 3. Cross check if ES is configured, if not update the below setting in app/etc/env.php:
-                             
-                        'system' => [
-                                'default' => [
-                                    'catalog' => [
-                                        'search' => [
-                                            'engine' => 'elasticsearch7',
-                                            'elasticsearch7_server_hostname' => 'elasticsearch',
-                                            'elasticsearch7_server_port' => '9200',
-                                            'elasticsearch7_index_prefix' => 'magento246'
-                                        ]
-                                    ]
-                                ]
-                            ],
-                           
-                4. Enable Developer Mode: php bin/magento deploy:mode:set developer
-                5. Make sure cache enabled : php bin/magento cache:enable
-                6. Configure Redis default/page caching
-                     php bin/magento setup:config:set --cache-backend=redis --cache-backend-redis-server=redis --cache-backend-redis-port=6379 --cache-backend-redis-db=0
-                     bin/magento setup:config:set --page-cache=redis --page-cache-redis-server=redis --page-cache-redis-db=1
-         
-                7. Configure Redis for session storage
-                    php bin/magento setup:config:set --session-save=redis --session-save-redis-host=redis --session-save-redis-port=6379 --session-save-redis-log-level=4 --session-save-redis-db=2
-     
-                8. Run the cli commands:
-                    * php bin/magento setup:upgrade
-                    * php bin/magento setup:di:compile
-                    * php -dmemory_limit=6G bin/magento setup:static-content:deploy -f
-                    * chmod -R 777 var pub generated app/etc/*
+      2. Install M2 via CLI(/var/www/magento246):
+              
+               bin/magento setup:install \
+               --base-url=http://magento246.loc/ \
+               --db-host=mariadb_246 \
+               --db-name=magento246 \
+               --db-user=mage246_user \
+               --db-password=mage246_pass \
+               --admin-firstname=admin \
+               --admin-lastname=admin \
+               --admin-email=admin@admin.com \
+               --admin-user=admin \
+               --admin-password=admin123 \
+               --language=en_US \
+               --currency=USD \
+               --timezone=America/Chicago \
+               --use-rewrites=1 \
+               --search-engine=elasticsearch7 \
+               --elasticsearch-host=elasticsearch \
+               --elasticsearch-index-prefix=magento246 \
+               --elasticsearch-port=9200         
+                  
+        3. Cross check if ES is configured, if not update the below setting in app/etc/env.php:
+                    
+               'system' => [
+                       'default' => [
+                           'catalog' => [
+                               'search' => [
+                                   'engine' => 'elasticsearch7',
+                                   'elasticsearch7_server_hostname' => 'elasticsearch',
+                                   'elasticsearch7_server_port' => '9200',
+                                   'elasticsearch7_index_prefix' => 'magento246'
+                               ]
+                           ]
+                       ]
+                   ],
+                  
+       4. Enable Developer Mode: php bin/magento deploy:mode:set developer
+       5. Make sure cache enabled : php bin/magento cache:enable
+       6. Configure Redis default/page caching
+            php bin/magento setup:config:set --cache-backend=redis --cache-backend-redis-server=redis --cache-backend-redis-port=6379 --cache-backend-redis-db=0
+            bin/magento setup:config:set --page-cache=redis --page-cache-redis-server=redis --page-cache-redis-db=1
+
+       7. Configure Redis for session storage
+           php bin/magento setup:config:set --session-save=redis --session-save-redis-host=redis --session-save-redis-port=6379 --session-save-redis-log-level=4 --session-save-redis-db=2
+
+       8. Run the cli commands:
+           * php bin/magento setup:upgrade
+           * php bin/magento setup:di:compile
+           * php -dmemory_limit=6G bin/magento setup:static-content:deploy -f
+           * chmod -R 777 var pub generated app/etc/*
           		    
 ```        
 
