@@ -39,7 +39,7 @@ Magento 2.4.6-p3 Docker Setup:
 
    Note:  In Mac - Open Terminal
       * ```mkdir ~/Sites``` Create root folder if not there
-      * Or ```mkdir -p ~/Sites/magento2-docker``` Create docker content folder
+      * Or ```mkdir -p ~/Sites/magento2-docker``` Create docker content folder in root
     
 4. Add System variable in environmental settings ```SHELL=/bin/bash``` (windows)
 
