@@ -34,6 +34,8 @@ services:
     db:
         container_name: mariadb
         image: mariadb:10.6
+    #    For mac use below image, prefer to use arm64v8 images for better performance
+    #    image: arm64v8/mariadb:10.6
         ports:
             - 3306:3306
         environment:
@@ -77,6 +79,19 @@ services:
         environment:
             "discovery.type": "single-node"
 
+    phpmyadmin:
+        image: arm64v8/phpmyadmin
+        container_name: phpmyadmin
+        restart: no
+        ports:
+            - "8080:80"
+        environment:
+            PMA_ARBITRARY: 1
+            PMA_HOST: "mariadb"
+            PMA_PORT: "3306"
+            PMA_USER: "root"
+            PMA_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+            
     #blackfire:
     #    container_name: blackfire
     #    image: blackfire/blackfire
