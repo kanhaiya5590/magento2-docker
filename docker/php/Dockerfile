@@ -40,11 +40,11 @@ RUN echo "upload_max_filesize = 1024M" > /usr/local/etc/php/conf.d/upload-max-si
 RUN echo "realpath_cache_size=10M" > /usr/local/etc/php/conf.d/realpath_cache_size.ini
 RUN echo "realpath_cache_ttl=7200" > /usr/local/etc/php/conf.d/realpath_cache_ttl.ini
 
-# Install xdebug extension
- RUN pecl install xdebug && docker-php-ext-enable xdebug \
-    && echo "xdebug.mode=develop,debug" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
-    && echo "xdebug.client_host=host.docker.internal" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
-    && echo "xdebug.start_with_request = yes" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+# Install xdebug extension - if need to enable then remove # from below lines
+# RUN pecl install xdebug && docker-php-ext-enable xdebug \
+#    && echo "xdebug.mode=develop,debug" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
+#    && echo "xdebug.client_host=host.docker.internal" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
+#    && echo "xdebug.start_with_request = yes" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
 
 # Install Composer
 RUN cd /usr/src && curl -sS http://getcomposer.org/installer | php
