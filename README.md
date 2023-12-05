@@ -1,4 +1,4 @@
-# Magento 2.4.6 Docker + Blackfire + Redis/Redisinsight + Elasticsearch + Rabbitmq
+# Magento 2.4.6 Docker + phpmyadmin + Redis/Redisinsight + Elasticsearch + Rabbitmq
 
 Magento 2.4.6 Docker Environment
 
