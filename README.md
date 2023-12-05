@@ -46,8 +46,8 @@ Magento 2.4.6-p3 Docker Setup:
 5. To show Running Containers use command ```docker ps```
 
 ```
-λ docker ps
-   9CONTAINER ID   IMAGE                           COMMAND                  CREATED             STATUS          PORTS                                                                                                         NAMES
+
+CONTAINER ID   IMAGE                           COMMAND                  CREATED             STATUS          PORTS                                                                                                         NAMES
 ffc4199826c6   nginx:1.22                      "/docker-entrypoint.…"   10 minutes ago      Up 10 minutes   0.0.0.0:80->80/tcp                                                                                            nginx
 d77b9ceec2bb   magento246-php                  "docker-php-entrypoi…"   10 minutes ago      Up 10 minutes   0.0.0.0:9000->9000/tcp                                                                                        php
 120b376a05be   redislabs/redisinsight:latest   "bash ./docker-entry…"   About an hour ago   Up 10 minutes   0.0.0.0:8001->8001/tcp                                                                                        redisinsight
