@@ -47,14 +47,15 @@ Magento 2.4.6-p3 Docker Setup:
 
 ```
 λ docker ps
-   9edaa3a3fd13   nginx:1.22               		  "nginx -g 'daemon of…"   12 minutes ago   Up About a minute   0.0.0.0:80->80/tcp, :::80->80/tcp                                                                                                                     nginx
-   8e5ce3425639   mailhog/mailhog:latest          "MailHog"                12 minutes ago   Up 12 minutes       0.0.0.0:1025->1025/tcp, :::1025->1025/tcp, 0.0.0.0:8025->8025/tcp, :::8025->8025/tcp                                                                  mail
-   24173dd2faf6   magento2-docker_php             "docker-php-entrypoi…"   12 minutes ago   Up 12 minutes       0.0.0.0:9000->9000/tcp, :::9000->9000/tcp                                                                                                             php
-   9552f52c3ce8   redis:latest                    "docker-entrypoint.s…"   12 minutes ago   Up 12 minutes       6379/tcp                                                                                                                                              redis
-   42756510ba9b   mariadb:10.6                    "docker-entrypoint.s…"   12 minutes ago   Up 12 minutes       0.0.0.0:3306->3306/tcp, :::3306->3306/tcp                                                                                                             mariadb
-   ee97a9094860   rabbitmq:3-management           "docker-entrypoint.s…"   12 minutes ago   Up 12 minutes       4369/tcp, 5671/tcp, 0.0.0.0:5672->5672/tcp, :::5672->5672/tcp, 15671/tcp, 15691-15692/tcp, 25672/tcp, 0.0.0.0:15672->15672/tcp, :::15672->15672/tcp   rabbitmq
-   6944566615b7   elasticsearch:7.17.12            "/usr/local/bin/dock…"   12 minutes ago   Up 12 minutes       0.0.0.0:9200->9200/tcp, :::9200->9200/tcp, 0.0.0.0:9300->9300/tcp, :::9300->9300/tcp                                                                  elasticsearch
-   7dab612ad6ec   redislabs/redisinsight:latest   "bash ./docker-entry…"   12 minutes ago   Up 12 minutes       0.0.0.0:8001->8001/tcp, :::8001->8001/tcp                                                                                                             redisinsight
+   9CONTAINER ID   IMAGE                           COMMAND                  CREATED             STATUS          PORTS                                                                                                         NAMES
+ffc4199826c6   nginx:1.22                      "/docker-entrypoint.…"   10 minutes ago      Up 10 minutes   0.0.0.0:80->80/tcp                                                                                            nginx
+d77b9ceec2bb   magento246-php                  "docker-php-entrypoi…"   10 minutes ago      Up 10 minutes   0.0.0.0:9000->9000/tcp                                                                                        php
+120b376a05be   redislabs/redisinsight:latest   "bash ./docker-entry…"   About an hour ago   Up 10 minutes   0.0.0.0:8001->8001/tcp                                                                                        redisinsight
+ae326c92656f   redis:latest                    "docker-entrypoint.s…"   About an hour ago   Up 10 minutes   6379/tcp                                                                                                      redis
+131bff6720ac   rabbitmq:3-management           "docker-entrypoint.s…"   About an hour ago   Up 10 minutes   4369/tcp, 5671/tcp, 0.0.0.0:5672->5672/tcp, 15671/tcp, 15691-15692/tcp, 25672/tcp, 0.0.0.0:15672->15672/tcp   rabbitmq
+18c157cf8733   elasticsearch:7.17.12           "/bin/tini -- /usr/l…"   About an hour ago   Up 10 minutes   0.0.0.0:9200->9200/tcp, 0.0.0.0:9300->9300/tcp                                                                elasticsearch
+397a2f9e0dc5   arm64v8/phpmyadmin              "/docker-entrypoint.…"   6 days ago          Up 10 minutes   0.0.0.0:8080->80/tcp                                                                                          phpmyadmin
+d221dff768f6   arm64v8/mariadb:10.6            "docker-entrypoint.s…"   8 days ago          Up 10 minutes   0.0.0.0:3306->3306/tcp                                                                                        mariadb                                                                                                           redisinsight
 ````
 
 5. Install magento Instance:
