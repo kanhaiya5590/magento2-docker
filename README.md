@@ -77,7 +77,7 @@ Magento 2.4.6-p3 Docker Setup:
               
                bin/magento setup:install \
                --base-url=http://magento246.loc/ \
-               --db-host=mariadb_246 \
+               --db-host=mariadb \
                --db-name=magento246 \
                --db-user=mage246_user \
                --db-password=mage246_pass \
